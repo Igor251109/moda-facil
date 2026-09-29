@@ -6,6 +6,7 @@ def conectar():
 
     return conexao, cursor
 
+
 def criar_tabela_gerente():
     conexao = None 
 
@@ -19,11 +20,11 @@ def criar_tabela_gerente():
             data_nascimento TEXT NOT NULL
         )
         ''')
-
         conexao.commit()
     finally:
         if conexao:
             conexao.close()
+
 
 def criar_tabela_funcionarios():
     conexao = None 
@@ -38,11 +39,30 @@ def criar_tabela_funcionarios():
             data_funcionario TEXT NOT NULL
         )
         ''')
-
         conexao.commit()
     finally:
         if conexao:
             conexao.close()
+
+
+def criar_tabela_clientes():
+    conexao = None
+
+    try:
+        conexao, cursor = conectar()
+
+        cursor.execute('''CREATE TABLE IF NOTE EXISTS clientes (
+            id_clientes INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome_cliente TEXT NOT NULL,
+            telefone_cliente TEXT NOT NULL,
+            data_cliente TEXT NOT NULL
+        )
+        ''')
+        conexao.commit()
+    finally:
+        if conexao:
+            conexao.close()
+
 
 def criar_tabela_produtos():
     conexao = None
@@ -60,7 +80,6 @@ def criar_tabela_produtos():
             marca TEXT NOT NULL
         )
         ''')
-
         conexao.commit()
 
     finally:
