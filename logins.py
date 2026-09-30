@@ -3,7 +3,7 @@ from database import conectar
 def login_gerente():
     conexao = None
     try:
-        conwxao, cursor = conectar()
+        conexao, cursor = conectar()
         print('\n ==== SISTEMA DE LOGIN DE GERENTES ====')
 
         nome_gerente = input("Digite o seu nome: ").lower()
@@ -24,13 +24,13 @@ def login_funcionario():
     conexao = None
     try:
         conwxao, cursor = conectar()
-        print('\n ==== SISTEMA DE LOGIN DE GERENTES ====')
+        print('\n ==== SISTEMA DE LOGIN DE FUNCIONÁRIO ====')
 
         nome_funcionario = input("Digite o seu nome: ").lower()
         telefone_funcionario = input("Digite o seu telefone: ").lower()
         data_funcionario = input("Digite sua data de nascimento: ").lower()
 
-        cursor.execute('''SELECT nome_funcionario, telefone_funcionario, data_funcionario FROM gerentes WHERE nome_funcionario = ? AND telefone_funcionario = ? AND data_funcionario = ?''',
+        cursor.execute('''SELECT nome_funcionario, telefone_funcionario, data_funcionario FROM funcionarios WHERE nome_funcionario = ? AND telefone_funcionario = ? AND data_funcionario = ?''',
         (nome_funcionario, telefone_funcionario, data_funcionario))
         funcionario = cursor.fetchone()
 

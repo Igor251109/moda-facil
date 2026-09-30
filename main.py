@@ -9,7 +9,7 @@ from logins import login_funcionario, login_gerente
 def criar_contas():
     try:
         print("\n 1 - GERENTE | 2 - FUNCIONÁRIO | 3 - CLIENTE")
-        opcao = int(input("qual opção vai escolher?: "))
+        opcao = int(input("Qual opção vai escolher?: "))
 
         if opcao == 1:
             tratar_erros_funcoes(cadastrar_gerente)
@@ -18,13 +18,13 @@ def criar_contas():
         elif opcao == 3:
            tratar_erros_funcoes(cadastrar_cliente)
         else:
-            print("opção inválida.")
+            print("Opção inválida.")
 
     except ValueError:
-        print("caracteres inválidos.")
+        print("Caracteres inválidos.")
 
 def fazer_login():
     try:
         print("\n 1 - GERENTE | 2 - FUNCIONÁRIO | 3 - CLIENTE")
-        opcao = int(input("qual opção vai escolher?: "))
+        opcao = int(input("Qual opção vai escolher?: "))
 

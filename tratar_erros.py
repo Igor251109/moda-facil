@@ -4,19 +4,19 @@ def tratar_erros_funcoes(funcao):
     try:
         funcao()
     except keyboardinterrupt:
-        print("encerrando sistema...")
+        print("Encerrando sistema...")
         return
     except ValueError:
-        print("dados inválidos.")
+        print("Dados inválidos.")
         return
     except sqlite3.OperationalError as e:
-        print("erro operacional no banco de dados:", e)
+        print("Erro operacional no banco de dados:", e)
         return
     except sqlite3.IntregityError as e:
-        print("erro de intregidade no banco de dados.", e)
+        print("Erro de intregidade no banco de dados.", e)
         return
     except sqlite3.Error as e:
-        print("erro no banco de dados:", e)
+        print("Erro no banco de dados:", e)
         return
     except Exception as e:
-        print("exceção:", e)
+        print("Exceção:", e)

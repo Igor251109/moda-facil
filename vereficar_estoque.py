@@ -13,8 +13,8 @@ def consultar_produtos():
 
         for produto in dados:
             print(f"Categoria: {produto[1]} | Preço: {produto[2]} |")
-            print(f"quantidade: {produto[3]} | tamanho: {produto[4]}")
-            print(f"cor: {produto[5]} | marca: {produto[6]} |")
+            print(f"Quantidade: {produto[3]} | Tamanho: {produto[4]}")
+            print(f"Cor: {produto[5]} | Marca: {produto[6]} |")
 
             print("-" * 30)
     finally:
