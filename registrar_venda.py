@@ -9,9 +9,9 @@ def registrar_venda():
         print("\n ==== SISTEMA DE REALIZAÇÕES DE VENDAS ====")
 
         dados = {
-            "categoria": input("qual a categoria do produto?: ")
-            "tamanho": input("qual tamanho da peça de roupa que procura?: "),
-            "marca": input("qual a marca desejada?: ")
+            "categoria": input("qual a categoria do produto?: ").lower(),
+            "tamanho": input("qual tamanho da peça de roupa que procura?: ").lower(),
+            "marca": input("qual a marca desejada?: ").lower()
         }
 
         cursor.execute("SELECT categoria, tamanho, marca, preco, id_produto FROM produtos WHERE categoria = ? AND tamanho = ? AND marca = ?",

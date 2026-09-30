@@ -9,12 +9,12 @@ def cadastrar_produtos():
         print("\n ==== SISTEMA DE CADASTRAMENTO DE PRODUTOS ====")
 
         dados = {
-            "categoria_produto": input("qual a categoria do produto?: "),
-            "preco": float(input("qual o valor do produto?: ")),
-            "quantidade": int(input("qual a quantidade que deseja adicionar a esse produto?: ")),
-            "tamanho": input("qual o tamanho da peça (p, m, g, gg, xg)?: "),
-            "cor": input("digite a cor da peça de roupa: "),
-            "marca": input("qual a marca da peça de roupa?: ")
+            "categoria_produto": input("qual a categoria do produto?: ").lower(),
+            "preco": float(input("qual o valor do produto?: ")).lower(),
+            "quantidade": int(input("qual a quantidade que deseja adicionar a esse produto?: ")).lower(),
+            "tamanho": input("qual o tamanho da peça (p, m, g, gg, xg)?: ").lower(),
+            "cor": input("digite a cor da peça de roupa: ").lower(),
+            "marca": input("qual a marca da peça de roupa?: ").lower()
         }
 
         cursor.execute('''INSERT INTO produtos (categoria, preco, quantidade, tamanho, cor, marca) VALUES (?, ?, ?, ?, ?, ?)''',
