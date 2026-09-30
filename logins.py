@@ -17,13 +17,17 @@ def login_gerente():
         if gerente:
             return True
         else:
+            print("Conta não encontrada.")
             return False
+    finally:
+        if conexao:
+            conexao.close()
 
 
 def login_funcionario():
     conexao = None
     try:
-        conwxao, cursor = conectar()
+        conexao, cursor = conectar()
         print('\n ==== SISTEMA DE LOGIN DE FUNCIONÁRIO ====')
 
         nome_funcionario = input("Digite o seu nome: ").lower()
@@ -37,4 +41,8 @@ def login_funcionario():
         if funcionario:
             return True
         else:
+            print("Conta não encontrada.")
             return False
+    finally:
+        if conexao:
+            conexao.close()

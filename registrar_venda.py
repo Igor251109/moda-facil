@@ -46,3 +46,6 @@ def registrar_venda():
         else:
             print("Quantidade indisponivel.")
             return
+    finally:
+        if conexao:
+            conexao.close()

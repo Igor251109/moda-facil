@@ -24,7 +24,8 @@ def criar_contas():
         print("Caracteres inválidos.")
 
 def fazer_login():
-    try:
-        print("\n 1 - GERENTE | 2 - FUNCIONÁRIO | 3 - CLIENTE")
-        opcao = int(input("Qual opção vai escolher?: "))
+    print("\n 1 - GERENTE | 2 - FUNCIONÁRIO ")
+    opcao = int(input("Qual opção vai escolher?: "))
 
+    if opcao == 1: login_funcionario()
+    elif opcao == 2: login_gerente()
