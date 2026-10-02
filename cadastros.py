@@ -35,8 +35,6 @@ def cadastrar_gerente():
     try:
         conexao, cursor = conectar()
 
-        print("\n-----CADASTRAR GERENTE-----")
-
         nome_gerente = input("Digite o seu nome: ").strip().lower()
         telefone_gerente = input("Digite o seu telefone: ").strip()
         data_gerente = input("Digite sua data de nascimento: ").strip()
