@@ -14,16 +14,16 @@ def menu_funcionario():
             print("\n ==== MENU DO FUNCIONÁRIO ====")
             oque_fazer = input("tem login?: ").lower()
 
-            if oque_fazer in ["sim", "s", "SIM"]:
+            if oque_fazer in ["sim", "s", "SIM", "S", "Sim"]:
                 login = fazer_login()
 
                 if login == True:
 
                     while True:
                         print("\n ==== MENU DO FUNCIONÁRIO ====")
-                        print("1 - CONSULTAR PRODUTOS")
+                        print("1 - VEREFICAR ESTOQUE")
                         print("2 - CADASTRAR CLIENTE")
-                        print("3 - VERIFICAR ESTOQUE")
+                        print("3 - CONSULTAR PRODUTO")
                         print("4 - REGISTRAR VENDA")
                         print("5 - SAIR")
 
@@ -46,7 +46,7 @@ def menu_funcionario():
                                 break
 
             
-            elif oque_fazer in ["nao", "n", "não", "NAO", "NÃO"]:
+            elif oque_fazer in ["nao", "n", "não", "NAO", "NÃO", "Não", "N"]:
                 criar_contas_funcionarios()
             
             else:

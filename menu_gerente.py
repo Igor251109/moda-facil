@@ -14,7 +14,7 @@ def menu_gerente():
             print("\n ==== MENU DO GERENTE ====")
             oque_fazer = input("tem login?: ").lower()
 
-            if oque_fazer in ["sim", "s", "SIM"]:
+            if oque_fazer in ["sim", "s", "SIM", "Sim", "S"]:
                 login = login_gerente()
 
                 if login == True:
@@ -48,7 +48,7 @@ def menu_gerente():
                                 print("Opção inválida.")
 
             
-            elif oque_fazer in ["nao", "n", "não", "NAO", "NÃO"]:
+            elif oque_fazer in ["nao", "n", "não", "NAO", "NÃO", "N", "Não", "Nao"]:
                 criar_contas_gerente()
             
             else:
