@@ -15,18 +15,7 @@ def registrar_venda():
             "marca": input("Qual a marca desejada?: ").lower()
         }
 
-        cursor.execute(
-            '''SELECT id_produto, categoria, tamanho, marca, preco, cor, quantidade
-            FROM produtos
-            WHERE categoria = ?
-            AND tamanho = ?
-            AND marca = ?''',
-            (
-                dados["categoria"],
-                dados["tamanho"],
-                dados["marca"]
-            )
-        )
+        cursor.execute('''SELECT id_produto, categoria, tamanho, marca, preco, cor, quantidade FROM produtos WHERE categoria = ? AND tamanho = ? AND marca = ?''',(dados["categoria"], dados["tamanho"], dados["marca"]))
 
         produtos = cursor.fetchall()
 
@@ -49,12 +38,7 @@ def registrar_venda():
 
         idx = int(input("\nQual ID da peça que deseja comprar?: "))
 
-        cursor.execute(
-            '''SELECT quantidade, preco
-            FROM produtos
-            WHERE id_produto = ?''',
-            (idx,)
-        )
+        cursor.execute('''SELECT quantidade, preco FROM produtos WHERE id_produto = ?''', (idx,))
 
         produto = cursor.fetchone()
 
@@ -78,21 +62,19 @@ def registrar_venda():
 
         nova_quantidade = quantidade_disponivel - quantos_comprar
 
-        cursor.execute(
-            '''UPDATE produtos
-            SET quantidade = ?
-            WHERE id_produto = ?''',
-            (nova_quantidade, idx)
-        )
+        cursor.execute('''UPDATE produtos SET quantidade = ? WHERE id_produto = ?''', (nova_quantidade, idx))
 
-        conexao.commit()
 
         valor_total = preco * quantos_comprar
+
+        cursor.execute('''INSERT INTO vendas (valor_venda) VALUES (?)''', (valor_total,))
 
         print("\nVenda realizada com sucesso!")
         print(f"Quantidade vendida: {quantos_comprar}")
         print(f"Valor total: R${valor_total:.2f}")
         print(f"Estoque restante: {nova_quantidade}")
+
+        conexao.commit()
 
     finally:
         if conexao:

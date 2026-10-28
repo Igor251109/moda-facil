@@ -6,6 +6,7 @@ from cadastrar_produtos import cadastrar_produtos
 from tratar_erros import tratar_erros_funcoes
 from criar_contas import criar_contas_gerente
 from logins import login_gerente
+from historico_vendas import listar_vendas
 
 
 def menu_gerente():
@@ -26,7 +27,8 @@ def menu_gerente():
                         print("3 - CADASTRAR CLIENTE")
                         print("4 - VERIFICAR ESTOQUE")
                         print("5 - REGISTRAR VENDA")
-                        print("6 - SAIR")
+                        print("6 - VER HISTÓRICO DE VENDAS")
+                        print("7 - SAIR")
 
                         qual_escolher = int(input("Qual opção vai escolher?: "))
 
@@ -42,6 +44,8 @@ def menu_gerente():
                             case 5:
                                 tratar_erros_funcoes(registrar_venda)
                             case 6:
+                                tratar_erros_funcoes(listar_vendas)
+                            case 7:
                                 print("Saindo da conta...")
                                 break
                             case _:

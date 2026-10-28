@@ -1,4 +1,4 @@
-from database import criar_tabela_clientes, criar_tabela_funcionarios, criar_tabela_gerente, criar_tabela_produtos
+from database import criar_tabela_clientes, criar_tabela_funcionarios, criar_tabela_gerente, criar_tabela_produtos, criar_tabela_vendas
 from menu_funcionario import menu_funcionario
 from menu_gerente import menu_gerente
 from tratar_erros import tratar_erros_funcoes
@@ -27,4 +27,5 @@ criar_tabela_clientes()
 criar_tabela_funcionarios()
 criar_tabela_gerente()
 criar_tabela_produtos()
+criar_tabela_vendas()
 tratar_erros_funcoes(menu)

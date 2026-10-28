@@ -5,6 +5,7 @@ from cadastros import cadastrar_cliente
 from tratar_erros import tratar_erros_funcoes
 from fazer_logins import fazer_login
 from criar_contas import criar_contas_funcionarios
+from historico_vendas import listar_vendas
 
 
 
@@ -25,7 +26,8 @@ def menu_funcionario():
                         print("2 - CADASTRAR CLIENTE")
                         print("3 - CONSULTAR PRODUTO")
                         print("4 - REGISTRAR VENDA")
-                        print("5 - SAIR")
+                        print("5 - VER HISTÓRICO DE VENDAS")
+                        print("6 - SAIR")
 
                         qual_escolher = int(input("Qual opção vai escolher?: "))
 
@@ -39,6 +41,8 @@ def menu_funcionario():
                             case 4:
                                 tratar_erros_funcoes(registrar_venda)
                             case 5:
+                                tratar_erros_funcoes(listar_vendas)
+                            case 6:
                                 print("encerrando programa...")
                                 break
                             case _:

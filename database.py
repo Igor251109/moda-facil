@@ -4,6 +4,7 @@ import sqlite3
 def conectar():
     conexao = sqlite3.connect("moda_facil.db")
     cursor = conexao.cursor()
+    cursor.execute('''PRAGMA foreign_key = ON''')
 
     return conexao, cursor
 
@@ -94,6 +95,24 @@ def criar_tabela_produtos():
 
         conexao.commit()
 
+    finally:
+        if conexao:
+            conexao.close()
+
+def criar_tabela_vendas():
+    conexao = None
+
+    try:
+        conexao, cursor = conectar()
+
+        cursor.execute('''CREATE TABLE IF NOT EXISTS vendas (
+            id_venda INTEGER PRIMARY KEY AUTOINCREMENT,
+            valor_venda REAL NOT NULL,
+            quantidade INTEGER NOT NULL
+        )''')
+
+        conexao.commit()
+    
     finally:
         if conexao:
             conexao.close()
